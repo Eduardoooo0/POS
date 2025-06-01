@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from api import router
 
-app = FastAPI()
+app = FastAPI(
+    title="UniSearch",
+    description="API para busca de universidades no mundo todo",
+    version="1.0"
+)
 
-@app.get('/teste')
-def teste():
-    return 'teste'
+app.include_router(router)
