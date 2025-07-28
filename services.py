@@ -10,3 +10,7 @@ def fetch_universities_by_name(name: str):
     response = requests.get(API_URL, params={"name": name})
     return response.json()
 
+def fetch_universities_in_brazil():
+    response = requests.get(API_URL,params={"country":"Brazil"})
+    return response.json()
+
