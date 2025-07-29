@@ -14,5 +14,5 @@ def get_universities_by_name(name: str = Query(..., example="Federal")):
     return fetch_universities_by_name(name)
 
 @router.get("/universidades/brasil", response_model=List[University])
-def get_universities_by_name():
+def get_universities_in_brazil():
     return fetch_universities_in_brazil()
