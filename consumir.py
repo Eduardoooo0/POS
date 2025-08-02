@@ -1,22 +1,25 @@
-import requests
-import json
-
-url = 'http://127.0.0.1:8000/universidades'
+from searches import fetch_universities_by_name, fetch_universities_by_country, fetch_universities_in_Brazil
 
 while True:
-    option = input('1 - Buscar universidades pelo nome\n2 - Buscar universidades por país\n3 - Buscar universidades do Brasil\nSelecione a opção desejada:')
+    option = input('''
+1 - Buscar universidades pelo nome
+2 - Buscar universidades por país
+3 - Buscar universidades do Brasil
+4 - Sair
+Selecione a opção desejada:''')
 
     if option == '1':
-        university_name = input('Digite o nome:')
-        r = requests.get(url=f'{url}/nome', params={"name": university_name})
-        if r:
-            dados = json.loads(r.text)
-            for index,dado in enumerate(dados, start=1):
-                print(f'{index} - {dado['name']} | {dado['country']} | {dado['domains']} | {dado['web_pages']}')
-        else:
-            print('erro')
-    elif option == '2':
-        pass
+        fetch_universities_by_name()
 
+    elif option == '2':
+        fetch_universities_by_country()
+
+    elif option == '3':
+        fetch_universities_in_Brazil()
+        
+    elif option == '4':
+        print('bye bye...saindo...')
+        break
     else:
+        print('\nDigite uma opção válida\n')
         pass
