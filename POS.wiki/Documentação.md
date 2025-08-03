@@ -59,7 +59,7 @@ unisearch/
 * Definição do escopo e estrutura do projeto
 * Implementação das rotas básicas de busca por país e nome
 
-**Etapa 2(atual – 60%)**
+**Etapa 2 (atual – 60%)**
 
 * Criação de rota local com dados filtrados do Brasil
 
@@ -115,3 +115,95 @@ unisearch/
 
 
 * Compatibilidade: A aplicação será acessível via navegadores modernos.
+
+---
+
+## 5. Documentação Detalhada dos Endpoints
+
+### **1 - GET /universidades/pais**
+
+- **Descrição:** Retorna universidades filtradas por país.  
+- **Parâmetros:**  
+  - `country` (query, obrigatório, string) → Nome do país.  
+- **Exemplo de requisição:**
+
+```bash
+GET /universidades/pais?country=Brazil
+```
+
+- **Resposta de sucesso:**
+
+```json
+[
+  {
+    "name": "Universidade de São Paulo",
+    "country": "Brazil",
+    "domains": ["usp.br"],
+    "web_pages": ["http://www.usp.br/"]
+  }
+]
+```
+
+- **Códigos de status:**  
+  - `200 OK` – Lista retornada com sucesso  
+  - `422 Unprocessable Entity` – Parâmetro ausente ou inválido  
+
+---
+
+### **2 - GET /universidades/nome**
+
+- **Descrição:** Retorna universidades filtradas por nome.  
+- **Parâmetros:**  
+  - `name` (query, obrigatório, string) → Nome ou parte do nome da universidade.  
+- **Exemplo de requisição:**
+
+```bash
+GET /universidades/nome?name=Federal
+```
+
+- **Resposta de sucesso:**
+
+```json
+[
+  {
+    "name": "Universidade Federal do Rio de Janeiro",
+    "country": "Brazil",
+    "domains": ["ufrj.br"],
+    "web_pages": ["http://www.ufrj.br/"]
+  }
+]
+```
+
+- **Códigos de status:**  
+  - `200 OK` – Lista retornada com sucesso  
+  - `422 Unprocessable Entity` – Parâmetro ausente ou inválido  
+
+---
+
+### **3 - GET /universidades/brasil**
+
+- **Descrição:** Retorna todas as universidades brasileiras.  
+- **Parâmetros:** Nenhum.  
+- **Exemplo de requisição:**
+
+```bash
+GET /universidades/brasil
+```
+
+- **Resposta de sucesso:**
+
+```json
+[
+  {
+    "name": "Universidade de Brasília",
+    "country": "Brazil",
+    "domains": ["unb.br"],
+    "web_pages": ["http://www.unb.br/"]
+  }
+]
+```
+
+- **Códigos de status:**  
+  - `200 OK` – Lista retornada com sucesso  
+
+
