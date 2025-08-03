@@ -54,15 +54,14 @@ unisearch/
 
 ## 3. Etapas de Entrega (Cronograma Detalhado)
 
-**Etapa 1 (atual – 30%)**
+**Etapa 1 (concluída – 30%)**
 
 * Definição do escopo e estrutura do projeto
 * Implementação das rotas básicas de busca por país e nome
 
-**Etapa 2**
+**Etapa 2(atual – 60%)**
 
 * Criação de rota local com dados filtrados do Brasil
-* Início da persistência local (ex: JSON ou SQLite)
 
 **Etapa 3**
 
