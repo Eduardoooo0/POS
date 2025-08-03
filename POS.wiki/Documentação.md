@@ -35,14 +35,7 @@ Uma aplicação web que permite ao usuário pesquisar universidades usando dados
 
 #### Funcionalidades futuras planejadas:
 
-* **Rota 3:** Buscar universidades brasileiras (`/universidades/brasil`) e aplicar filtros locais por:
-
-  * Estado (a partir do nome ou domínio, com regras manuais)
-  * Domínio (ex: `.edu.br`, `.com`)
-  * Tipo estimado (pública ou privada, por nome)
-* **Rota 4:** Marcar universidades como favoritas (com persistência em banco ou JSON)
-* **Rota 5:** Integração com RESTCountries para exibir dados extras do país
-* **Rota 6:** Armazenar dados localmente (cache) para permitir filtragens mais avançadas
+* **Rota 3:** Buscar universidades brasileiras (`/universidades/brasil`)
 
 ---
 
